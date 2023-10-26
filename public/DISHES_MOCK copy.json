@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Ao Molho",
+    "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+    "price": 19.90,
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Veggie",
+    "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
+    "price": 19.90,
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "A la Camarón",
+    "description": "Macarrão com vegetais de primeira linha e camarão dos 7 mares.",
+    "price": 19.90,
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Ao Molho",
+    "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+    "price": 19.90,
+    "available": true
+  },
+  {
+    "id": 5,
+    "name": "Veggie",
+    "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
+    "price": 19.90,
+    "available": false
+  },
+  {
+    "id": 6,
+    "name": "A la Camarón",
+    "description": "Macarrão com vegetais de primeira linha e camarão dos 7 mares.",
+    "price": 19.90,
+    "available": false
+  },
+  {
+    "id": 5,
+    "name": "Veggie",
+    "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
+    "price": 19.90,
+    "available": true
+  },
+  {
+    "id": 6,
+    "name": "A la Camarón",
+    "description": "Macarrão com vegetais de primeira linha e camarão dos 7 mares.",
+    "price": 19.90,
+    "available": true
+  }
+ ] 

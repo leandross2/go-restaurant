@@ -1,0 +1,28 @@
+### Cria Um Prato
+POST http://localhost:3000/api/dishes
+content-type: application/json
+
+{
+    "id": 8,
+    "name": "Carbonara",
+    "description": "bueno",
+    "price": 25.00,
+    "available": true
+}
+
+### Lista Todos os Pratos
+GET http://localhost:3000/api/dishes
+
+### Retorna Um Prato
+DELETE http://localhost:3000/api/dishes/5
+
+### Edita um prato
+PUT http://localhost:3000/api/dishes/4
+content-type: application/json
+
+{
+    "name": "Carbonara",
+    "description": "bueno",
+    "price": 25.00,
+    "available": true
+}
