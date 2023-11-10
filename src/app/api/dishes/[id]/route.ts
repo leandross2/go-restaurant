@@ -67,24 +67,23 @@ export async function PUT(request:NextRequest, {params}:getParams) {
 
       const dishIndex = dishesListParsed.findIndex((dish:any) => dish.id === Number(params.id))
 
-      if(dishIndex<0){
+      if(dishIndex < 0){
         return NextResponse.json({
           message: "Nenhum prato encontrado"
         },
         {status: 404}
         )
       }
-      
+
       const body = await request.json() as IDishe
 
       dishesListParsed[dishIndex].name = body.name
       dishesListParsed[dishIndex].description = body.description
       dishesListParsed[dishIndex].price = body.price
       dishesListParsed[dishIndex].available = body.available
-        
+
       await writeFile("public/DISHES_MOCK.json", JSON.stringify(dishesListParsed), 'utf-8')
 
-      
       return NextResponse.json(
         dishesListParsed[dishIndex]
       )
