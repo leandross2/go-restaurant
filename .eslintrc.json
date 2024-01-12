@@ -1,6 +1,12 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "indent":["error", 2]
+    "indent":["error", 2],
+    "react-hooks/rules-of-hooks": "off",
+    "no-unused-vars": "error",
+    "no-multiple-empty-lines":["error", {"max": 1}],
+    "space-in-parens": "error",
+    "object-curly-spacing": ["error", "always"]
+
   }
 }

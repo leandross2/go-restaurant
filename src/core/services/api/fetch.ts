@@ -10,7 +10,7 @@ interface FetchApiProps{
   options?:RequestInit
 }
 
-export const fetchApi = async <T>({url, options}:FetchApiProps):Promise<ResponseFetchApi<T>> =>{
+export const fetchApi = async <T>({ url, options }:FetchApiProps):Promise<ResponseFetchApi<T>> =>{
   try{
     const response = await fetch(`http://localhost:3000/api${url}`, options)
     const data = await response.json()
@@ -21,7 +21,7 @@ export const fetchApi = async <T>({url, options}:FetchApiProps):Promise<Response
     } 
 
   }catch(err: any){
-    console.error({err})
+    console.error({ err })
     return {
       status: err.status,
       body: err.message

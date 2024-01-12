@@ -11,25 +11,25 @@ import { formatCurrency } from "@/core/helpers/formatCurrency"
 import { useModal } from "@/core/hooks/useModal"
 import { useDishes } from "@/core/hooks/useDishes"
 
-
 interface CardProps{
   dishe: IDishe
 }
-export const Card:React.FC<CardProps> = ({dishe}) => {
-  const {toggleModal, setInitialData} = useModal()
-  const {getItem} = useDishes()
+export const Card:React.FC<CardProps> = ({ dishe }) => {
+  const { toggleModal, setInitialData: setInitialDataModal } = useModal()
+  const { getItem } = useDishes()
   
   const handleEdit = async ()=>{
-    toggleModal()
 
     const data = await getItem(dishe.id)
-    
-    setInitialData(data)
-  }
 
+    setInitialDataModal(data)
+
+    toggleModal()
+  }
+  
   return (
     <div className={container}>
-      <Image src={aoMolho} alt={dishe.name} className={imageDish}/>
+      <Image loading={'lazy'} src={aoMolho} alt={dishe.name} className={imageDish} width={352} height={198} placeholder="blur" />
       
       <div className={`${cardDescription}`}> 
         <p className={Text.title}>{dishe.name}</p>

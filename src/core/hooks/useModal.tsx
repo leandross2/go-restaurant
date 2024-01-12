@@ -1,9 +1,6 @@
 'use client'
 import { useContext } from "react"
 import { ModalContext } from "../context/ModalContext"
-import { fetchApi } from "../services/api/fetch"
-import { IDishe } from "../types/IDishe"
-
 
 export const useModal = () => {
   const context = useContext(ModalContext)
@@ -14,5 +11,5 @@ export const useModal = () => {
 
   const toggleModal = () => context.setIsVisible(!context.isVisible)
 
-  return {...context, toggleModal}
+  return { ...context, toggleModal }
 }

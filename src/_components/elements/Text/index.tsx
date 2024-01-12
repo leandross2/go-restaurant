@@ -9,7 +9,7 @@ interface TextProps{
   disabled?: boolean
 }
 
-export const Text:React.FC<TextProps> = ({type="regular",font="Roboto",disabled, children}) => {
+export const Text:React.FC<TextProps> = ({ type="regular",font="Roboto",disabled, children }) => {
   return (
     <p className={`${container[type]} ${font === "Roboto" ? roboto.className : poppins.className} ${disabled ? 'disabled' : ''}`}>
       {children}

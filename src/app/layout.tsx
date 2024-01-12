@@ -1,6 +1,5 @@
 import "@/styles/global.css"
 import { Metadata } from "next"
-import { Roboto, Poppins } from 'next/font/google'
 import  "@/styles/global.css"
 import { roboto } from "./fonts"
 
@@ -8,8 +7,6 @@ export const  metadata: Metadata = {
   title: "AAAA@",
   description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
 }
-
-
 
 export default function RootLayout({
   children,

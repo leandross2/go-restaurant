@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import {readFile, writeFile} from 'fs/promises'
+import { readFile, writeFile } from 'fs/promises'
 import { IDishe } from '@/core/types/IDishe'
 
 export async function GET() {
@@ -27,5 +27,4 @@ export async function POST(request:NextRequest) {
     newDishe
   )
 }
-
 

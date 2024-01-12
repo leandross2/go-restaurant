@@ -3,5 +3,6 @@ export interface IDishe{
   name: string
   description: string
   price: number
+  priceFormated: string
   available: boolean
 }

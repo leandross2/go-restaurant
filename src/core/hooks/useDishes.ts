@@ -1,11 +1,20 @@
+import { formatCurrency } from "../helpers/formatCurrency"
 import { fetchApi } from "../services/api/fetch"
 import { IDishe } from "../types/IDishe"
 
 export const useDishes = ()=>{
-  const getItem = async (id:number)=>{
-    const data = await fetchApi<IDishe>({url: `/dishes/${id}`})
-    return data.body
+  const getAll = async ()=>{
+    const data = await fetchApi<IDishe[]>({ url: `/dishes`, options:{ cache: "no-cache" } })
+    return data.body.map(dish => ({
+      ...dish,
+      priceFormated: formatCurrency(dish.price)
+    }))
   }
 
-  return {getItem}
+  const getItem = async (id:number)=>{
+    const data = await fetchApi<IDishe>({ url: `/dishes/${id}`,options:{ cache: "no-cache" } })
+    return { ...data.body, priceFormated: formatCurrency(data.body.price) }
+  }
+
+  return { getItem, getAll }
 }

@@ -12,7 +12,7 @@ export const baseButton = style({
 
 export const container = styleVariants({
   default: [baseButton],
-  create: [baseButton, {backgroundColor: "#39B100", color: "#FFF", padding: "0 0 0 1rem"}]
+  create: [baseButton, { backgroundColor: "#39B100", color: "#FFF", padding: "0 0 0 1rem" }]
 });
 
 export const icon = style({

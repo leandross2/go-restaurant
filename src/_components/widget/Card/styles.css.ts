@@ -1,6 +1,5 @@
 import { container as TextStyles } from "@/_components/elements/Text/styles.css";
 import { style, styleVariants } from "@vanilla-extract/css";
-import { poppins } from "@/app/fonts"
 export const container = style({
   display: "flex",
   flexDirection: "column",
@@ -25,8 +24,8 @@ export const cardDescription = style({
 })
 
 export const Text = styleVariants({
-  title: [TextStyles.title, {marginBottom: "1rem"}],
-  description: [TextStyles.description, {marginBottom: "1rem"}],
+  title: [TextStyles.title, { marginBottom: "1rem" }],
+  description: [TextStyles.description, { marginBottom: "1rem" }],
   emphasis: [TextStyles.emphasis]
 })
 

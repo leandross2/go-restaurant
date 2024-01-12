@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import {readFile, writeFile} from 'fs/promises'
+import { readFile, writeFile } from 'fs/promises'
 import { IDishe } from '@/core/types/IDishe'
 
 interface getParams{
   params: {id: string}
 }
-export async function GET(request:NextRequest, {params}:getParams) {
+export async function GET(request:NextRequest, { params }:getParams) {
   try{
     const dishesListFile = await readFile("public/DISHES_MOCK.json", 'utf8')
 
@@ -18,7 +18,7 @@ export async function GET(request:NextRequest, {params}:getParams) {
         return NextResponse.json({
           message: "Nenhum prato encontrado"
         },
-        {status: 404}
+        { status: 404 }
         )
       }
 
@@ -34,12 +34,11 @@ export async function GET(request:NextRequest, {params}:getParams) {
     return NextResponse.json({
       message: "Internal server error"
     },
-    {status: 500}
+    { status: 500 }
     )
  
   }
 }
-
 
 interface DeleteMethodParms{
   params: {
@@ -47,18 +46,18 @@ interface DeleteMethodParms{
   }
 }
 
-export async function DELETE(request:NextRequest, {params}:DeleteMethodParms) {
-  const {id} = params
+export async function DELETE(request:NextRequest, { params }:DeleteMethodParms) {
+  const { id } = params
   const dishesListFile = await readFile("public/DISHES_MOCK.json", 'utf8')
   const dishesJson = JSON.parse(dishesListFile) as IDishe[]
   const dishesUpdated = dishesJson.filter(dishe => dishe.id !== Number(id))
   
   await writeFile("public/DISHES_MOCK.json", JSON.stringify(dishesUpdated), 'utf-8')
 
-  return NextResponse.json({}, {status:201})
+  return NextResponse.json({}, { status:201 })
 }
 
-export async function PUT(request:NextRequest, {params}:getParams) {
+export async function PUT(request:NextRequest, { params }:getParams) {
   try{
     if(params.id){
       const dishesListFile = await readFile("public/DISHES_MOCK.json", 'utf8')
@@ -71,7 +70,7 @@ export async function PUT(request:NextRequest, {params}:getParams) {
         return NextResponse.json({
           message: "Nenhum prato encontrado"
         },
-        {status: 404}
+        { status: 404 }
         )
       }
 
@@ -94,7 +93,7 @@ export async function PUT(request:NextRequest, {params}:getParams) {
     return NextResponse.json({
       message: "Internal server error"
     },
-    {status: 500}
+    { status: 500 }
     )
  
   }

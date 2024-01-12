@@ -3,7 +3,6 @@ import { PiPlusSquare } from "react-icons/pi"
 import { Logo } from "@/_components/elements/Logo"
 import { content, header } from "./styles.css"
 
-
 export const Header:React.FC = () => {
   return (
     <header className={header}>

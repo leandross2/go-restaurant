@@ -5,6 +5,10 @@ const {
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: ["cdn.pixabay.com"]
+  }
+}
 
 module.exports = withVanillaExtract(nextConfig)
