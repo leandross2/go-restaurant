@@ -10,21 +10,20 @@ import { PiPencilSimpleLineThin, PiTrashThin } from "react-icons/pi"
 import { formatCurrency } from "@/core/helpers/formatCurrency"
 import { useModal } from "@/core/hooks/useModal"
 import { useDishes } from "@/core/hooks/useDishes"
+import { ControlModalActionsEnum } from "@/core/types/reducers/ModalReducer"
 
 interface CardProps{
   dishe: IDishe
 }
 export const Card:React.FC<CardProps> = ({ dishe }) => {
-  const { toggleModal, setInitialData: setInitialDataModal } = useModal()
+  const { toggleUpdateModal,  } = useModal()
   const { getItem } = useDishes()
   
-  const handleEdit = async ()=>{
+  const handleUpdate = async ()=>{
 
     const data = await getItem(dishe.id)
 
-    setInitialDataModal(data)
-
-    toggleModal()
+    toggleUpdateModal(data)
   }
   
   return (
@@ -39,7 +38,7 @@ export const Card:React.FC<CardProps> = ({ dishe }) => {
 
       <div className={actionsBar}>
         <div className={actionButtons}>
-          <Button onClick={handleEdit} >
+          <Button onClick={handleUpdate} >
             <PiPencilSimpleLineThin size={25}/>
           </Button>
 

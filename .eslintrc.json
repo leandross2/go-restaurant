@@ -1,12 +1,14 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["next/core-web-vitals"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "indent":["error", 2],
     "react-hooks/rules-of-hooks": "off",
     "no-unused-vars": "error",
     "no-multiple-empty-lines":["error", {"max": 1}],
     "space-in-parens": "error",
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
 
   }
 }
