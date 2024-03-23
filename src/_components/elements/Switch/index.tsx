@@ -1,9 +1,10 @@
-import { useId } from "react"
-import { container, switchContainer, checkbox, areaSwitch, switcher } from "./styles.css"
+import { areaSwitch, checkbox, container, switchContainer, switcher } from "./styles.css"
 import { Text } from "../Text"
 
-export const Switch:React.FC = () => {
-  const id = useId()
+interface SwitchProps{
+  id: string
+}
+export const Switch:React.FC<SwitchProps> = ({ id }) => {
   
   return (
     <div className={container}>

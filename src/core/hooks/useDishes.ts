@@ -16,5 +16,11 @@ export const useDishes = ()=>{
     return { ...data.body, priceFormated: formatCurrency(data.body.price) }
   }
 
-  return { getItem, getAll }
+  const createItem = async (dish:Omit<IDishe,'id'| 'priceFormated'>)=>{
+    const data = await fetchApi<IDishe>({ url: `/dishes`,options:{ method: "post", cache: "no-cache", body: JSON.stringify(dish) } })
+
+    return { ...data.body, priceFormated: formatCurrency(data.body.price) }
+  }
+
+  return { getItem, getAll, createItem }
 }

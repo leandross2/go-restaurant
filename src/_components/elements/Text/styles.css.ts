@@ -7,10 +7,6 @@ export const container = styleVariants({
   description: { fontSize: '1rem', fontWeight: 400 },
 });
 
-export const weightText = styleVariants({
-  regular: { fontWeight: '400' },
-  bold: { fontWeight: '600' },
-});
 
 export const emphasis = styleVariants({
   regular: { fontWeight: '400' },

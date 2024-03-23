@@ -10,11 +10,11 @@ import { PiPencilSimpleLineThin, PiTrashThin } from "react-icons/pi"
 import { formatCurrency } from "@/core/helpers/formatCurrency"
 import { useModal } from "@/core/hooks/useModal"
 import { useDishes } from "@/core/hooks/useDishes"
-import { ControlModalActionsEnum } from "@/core/types/reducers/ModalReducer"
 
 interface CardProps{
   dishe: IDishe
 }
+
 export const Card:React.FC<CardProps> = ({ dishe }) => {
   const { toggleUpdateModal,  } = useModal()
   const { getItem } = useDishes()
@@ -47,7 +47,7 @@ export const Card:React.FC<CardProps> = ({ dishe }) => {
           </Button>
         </div>
 
-        <Switch/>
+        <Switch id={String(dishe.id)}/>
       </div>
     </div>
   )

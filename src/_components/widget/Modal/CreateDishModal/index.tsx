@@ -1,31 +1,13 @@
-import { Button } from "@/_components/elements/Button"
-import { Input } from "@/_components/elements/Input"
 import { Modal } from "@/_components/elements/Modal"
-import { IDishe } from "@/core/types/IDishe"
-import { FormEvent, useRef } from "react"
+import { useModal } from "@/core/hooks/useModal"
+import { CreateDishForm } from "../../Forms/CreateDishForm"
 
-interface  ModalProps{
-  initialData?: IDishe
-}
-export const CreateDishModal:React.FC<ModalProps> =() => {
-  const inputNameRef = useRef(null)
-  const inputDescriptionRef = useRef(null)
-  const inputPriceRef = useRef(null)
-  
-  const handleSubmit = (e: FormEvent<HTMLFormElement>)=>{
-    e.preventDefault()
-  }
+export const CreateDishModal:React.FC =() => {
+  const { toggleCreateModal }= useModal()
 
   return (
-    <Modal title="Criar Prato">
-
-      <form onSubmit={handleSubmit}>
-        <Input name="name" ref={inputNameRef} placeholder="Nome do Prato"/>
-        <Input name="description" ref={inputDescriptionRef} placeholder="Descrição"/>
-        <Input name="price" ref={inputPriceRef} placeholder="Preço"/>
-
-        <Button type="submit">Enviar</Button>
-      </form>
+    <Modal title="Criar Prato" onClose={toggleCreateModal}>
+      <CreateDishForm afterSubmit={toggleCreateModal}/>
     </Modal>
   )
 }

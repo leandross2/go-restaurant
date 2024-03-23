@@ -1,7 +1,7 @@
 'use client'
 import { useContext } from "react"
 import { ModalContext } from "../context/ModalContext"
-import { ControlModalActionsEnum } from "../types/reducers/ModalReducer"
+import { ControlModalActionsEnum } from "../types/IReducers/IModalReducer"
 import { IDishe } from "../types/IDishe"
 
 export const useModal = () => {
@@ -11,9 +11,9 @@ export const useModal = () => {
     console.warn("ModalContext is not found")
   }
 
-  const toggleCreateModal = () => context.controlModalDispatch({type: ControlModalActionsEnum.toggleModalCreate})
+  const toggleCreateModal = () => context.controlModalDispatch({ type: ControlModalActionsEnum.toggleModalCreate })
   
-  const toggleUpdateModal = (dish: IDishe) => context.controlModalDispatch({type: ControlModalActionsEnum.toggleModalUpdate, payload: dish})
+  const toggleUpdateModal = (dish: IDishe) => context.controlModalDispatch({ type: ControlModalActionsEnum.toggleModalUpdate, payload: dish })
 
   return { ...context, toggleCreateModal, toggleUpdateModal }
 }

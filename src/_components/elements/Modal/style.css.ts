@@ -16,7 +16,13 @@ export const modal = style({
   background: "#F0F0F5",
   minWidth: "736px",
   padding: "40px",
+  borderRadius: "8px"
 })
+export const header = style({
+  display:"block" ,
+  marginBottom: "40px",
+})
+
 
 globalStyle(`${modal} ${InputContainer} + ${InputContainer}`, {
   marginTop: '1rem',
